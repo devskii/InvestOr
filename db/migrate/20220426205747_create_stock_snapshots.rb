@@ -23,6 +23,7 @@ class CreateStockSnapshots < ActiveRecord::Migration[7.0]
       t.decimal :eps_7y_ago, precision: 4, scale: 2
       t.decimal :eps_8y_ago, precision: 4, scale: 2
       t.decimal :eps_9y_ago, precision: 4, scale: 2
+
       t.timestamps
     end
   end
