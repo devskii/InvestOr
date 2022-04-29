@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_21_111754) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_26_205747) do
   create_table "stock_snapshots", force: :cascade do |t|
     t.string "ticker"
     t.boolean "prominent?"
