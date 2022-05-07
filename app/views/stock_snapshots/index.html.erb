@@ -92,7 +92,9 @@
 <ul>
     <% @stock_snapshots.each do |stock_snapshot| %>
         <li>
-            <%= stock_snapshot.ticker %>
+            <a href="<%= stock_snapshot_path(stock_snapshot) %>">
+                <%= stock_snapshot.ticker %>
+            </a>
         </li>
     <% end %>
 </ul>
