@@ -1,4 +1,5 @@
 {
     "dockerFile": "Dockerfile",
-    "postCreateCommand": "bundle install"
+    "postCreateCommand": "bundle install",
+    "extensions": ["rebornix.ruby"]
 }
