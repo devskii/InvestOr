@@ -1,33 +1,32 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  ticker: MyString
-  is_prominent: false
-  dividend?: false
-  total_assets: 1
-  total_intangibles: 1
-  total_goodwill: 1
-  total_current_assets: 1
-  total_liabilities: 1
-  total_longterm_debt: 1
-  total_current_liabilities: 1
-  market_cap: 1
-  market_price: 9.99
-  eps_this_year: 9.99
-  eps_last_year: 9.99
-  eps_2y_ago: 9.99
-  eps_3y_ago: 9.99
-  eps_4y_ago: 9.99
-  eps_5y_ago: 9.99
-  eps_6y_ago: 9.99
-  eps_7y_ago: 9.99
-  eps_8y_ago: 9.99
-  eps_9y_ago: 9.99
+  ticker: AAPL
+  is_prominent: true
+  has_reliable_dividend: true
+  total_assets: 351002
+  total_intangibles: 0
+  total_goodwill: 0
+  total_current_assets: 134836
+  total_liabilities: 287912
+  total_longterm_debt: 109875
+  total_current_liabilities: 125481
+  market_cap: 2500000000
+  market_price: 157.28
+  eps_last_year: 5.61
+  eps_2y_ago: 3.28
+  eps_3y_ago: 2.97
+  eps_4y_ago: 2.98
+  eps_5y_ago: 2.3
+  eps_6y_ago: 2.08
+  eps_7y_ago: 2.31
+  eps_8y_ago: 1.61
+  eps_9y_ago: 1.42
+  eps_10y_ago: 1.58
 
 two:
   ticker: MyString
   has_reliable_dividend: false
-  dividend?: false
   total_assets: 1
   total_intangibles: 1
   total_goodwill: 1
