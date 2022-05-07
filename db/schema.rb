@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_26_205747) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_07_220634) do
   create_table "stock_snapshots", force: :cascade do |t|
     t.string "ticker"
-    t.boolean "prominent?"
-    t.boolean "dividend?"
+    t.boolean "is_prominent"
+    t.boolean "has_reliable_dividend"
     t.integer "total_assets"
     t.integer "total_intangibles"
     t.integer "total_goodwill"
