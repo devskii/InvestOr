@@ -1,0 +1,58 @@
+<h1><%= @stock_snapshot.ticker %></h1>
+<p>Prominent? <%= @stock_snapshot.is_prominent %></p>
+<p>Dividend? <%= @stock_snapshot.has_reliable_dividend %></p>
+<p>Total Assets: <%= @stock_snapshot.total_assets %></p>
+<p>Total Intangibles: <%= @stock_snapshot.total_intangibles %></p>
+<p>Total Goodwill: <%= @stock_snapshot.total_goodwill %></p>
+<p>Total Current Assets: <%= @stock_snapshot.total_current_assets %></p>
+<p>Total Liabilities: <%= @stock_snapshot.total_liabilities %></p>
+<p>Total Longterm Debt: <%= @stock_snapshot.total_longterm_debt %></p>
+<p>Total Current Liabilities: <%= @stock_snapshot.total_current_liabilities %></p>
+<p>Market Cap: <%= @stock_snapshot.market_cap %></p>
+<p>Market Price: <%= @stock_snapshot.market_price %></p>
+<table>
+    <tr>
+        <th>Year</th>
+        <th>Earnings Per Share, diluted GAAP</th>
+    </tr>
+    <tr>
+        <td>Last year</td>
+        <td><%= @stock_snapshot.eps_last_year %></td>
+    </tr>
+    <tr>
+        <td>2 years ago</td>
+        <td><%= @stock_snapshot.eps_2y_ago %></td>
+    </tr>
+    <tr>
+        <td>3 years ago</td>
+        <td><%= @stock_snapshot.eps_3y_ago %></td>
+    </tr>
+    <tr>
+        <td>4 years ago</td>
+        <td><%= @stock_snapshot.eps_4y_ago %></td>
+    </tr>
+    <tr>
+        <td>5 years ago</td>
+        <td><%= @stock_snapshot.eps_5y_ago %></td>
+    </tr>
+    <tr>
+        <td>6 years ago</td>
+        <td><%= @stock_snapshot.eps_6y_ago %></td>
+    </tr>
+    <tr>
+        <td>7 years ago</td>
+        <td><%= @stock_snapshot.eps_7y_ago %></td>
+    </tr>
+    <tr>
+        <td>8 years ago</td>
+        <td><%= @stock_snapshot.eps_8y_ago %></td>
+    </tr>
+    <tr>
+        <td>9 years ago</td>
+        <td><%= @stock_snapshot.eps_9y_ago %></td>
+    </tr>
+    <tr>
+        <td>10 years ago</td>
+        <td><%= @stock_snapshot.eps_10y_ago %></td>
+    </tr>
+</table>

@@ -88,3 +88,11 @@
     <input type="text" />
 </div>
 <button>Create Snapshot</button>
+<h1>Existing Stock Snapshots</h1>
+<ul>
+    <% @stock_snapshots.each do |stock_snapshot| %>
+        <li>
+            <%= stock_snapshot.ticker %>
+        </li>
+    <% end %>
+</ul>
