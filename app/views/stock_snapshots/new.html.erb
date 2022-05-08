@@ -1,0 +1,94 @@
+<h1>New Stock Snapshot</h1>
+<%= form_with model: @stock_snapshot do |form| %>
+    <div>
+        <%= form.label :ticker %>
+        <%= form.text_field :ticker %>
+    </div>
+    <div>
+        <%= form.label :is_prominent %>
+        <%= form.check_box :is_prominent %>
+    </div>
+    <div>
+        <%= form.label :has_reliable_dividend %>
+        <%= form.check_box :has_reliable_dividend %>
+    </div>
+    <div>
+        <%= form.label :total_assets %>
+        <%= form.number_field :total_assets %>
+    </div>
+    <div>
+        <%= form.label :total_intangibles %>
+        <%= form.number_field :total_intangibles %>
+    </div>
+    <div>
+        <%= form.label :total_goodwill %>
+        <%= form.number_field :total_goodwill %>
+    </div>
+    <div>
+        <%= form.label :total_current_assets %>
+        <%= form.number_field :total_current_assets %>
+    </div>
+    <div>
+        <%= form.label :total_liabilities %>
+        <%= form.number_field :total_liabilities %>
+    </div>
+    <div>
+        <%= form.label :total_longterm_debt %>
+        <%= form.number_field :total_longterm_debt %>
+    </div>
+    <div>
+        <%= form.label :total_current_liabilities %>
+        <%= form.number_field :total_current_liabilities %>
+    </div>
+    <div>
+        <%= form.label :market_cap %>
+        <%= form.number_field :market_cap %>
+    </div>
+    <div>
+        <%= form.label :market_price %>
+        <%= form.number_field :market_price %>
+    </div>
+    <div>
+        <%= form.label :eps_last_year %>
+        <%= form.number_field :eps_last_year %>
+    </div>
+    <div>
+        <%= form.label :eps_2y_ago %>
+        <%= form.number_field :eps_2y_ago %>
+    </div>
+    <div>
+        <%= form.label :eps_3y_ago %>
+        <%= form.number_field :eps_3y_ago %>
+    </div>
+    <div>
+        <%= form.label :eps_4y_ago %>
+        <%= form.number_field :eps_4y_ago %>
+    </div>
+    <div>
+        <%= form.label :eps_5y_ago %>
+        <%= form.number_field :eps_5y_ago %>
+    </div>
+    <div>
+        <%= form.label :eps_6y_ago %>
+        <%= form.number_field :eps_6y_ago %>
+    </div>
+    <div>
+        <%= form.label :eps_7y_ago %>
+        <%= form.number_field :eps_7y_ago %>
+    </div>
+    <div>
+        <%= form.label :eps_8y_ago %>
+        <%= form.number_field :eps_8y_ago %>
+    </div>
+    <div>
+        <%= form.label :eps_9y_ago %>
+        <%= form.number_field :eps_9y_ago %>
+    </div>
+    <div>
+        <%= form.label :eps_10y_ago %>
+        <%= form.number_field :eps_10y_ago %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
