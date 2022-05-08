@@ -1,6 +1,6 @@
 class StockSnapshotsController < ApplicationController
   def create
-    @stock_snapshot = StockSnapshot.new(ticker: "...")
+    @stock_snapshot = StockSnapshot.new(stock_snapshot_params)
     if @stock_snapshot.save
       redirect_to @stock_snapshot
     else
@@ -19,4 +19,32 @@ class StockSnapshotsController < ApplicationController
   def show
     @stock_snapshot = StockSnapshot.find(params[:id])
   end
+
+  private
+    def stock_snapshot_params
+      params.require(:stock_snapshot).permit(
+        :ticker,
+        :is_prominent,
+        :has_reliable_dividend,
+        :total_assets,
+        :total_intangibles,
+        :total_goodwill,
+        :total_current_assets,
+        :total_liabilities,
+        :total_longterm_debt,
+        :total_current_liabilities,
+        :market_cap,
+        :market_price,
+        :eps_last_year,
+        :eps_2y_ago,
+        :eps_3y_ago,
+        :eps_4y_ago,
+        :eps_5y_ago,
+        :eps_6y_ago,
+        :eps_7y_ago,
+        :eps_8y_ago,
+        :eps_9y_ago,
+        :eps_10y_ago
+      )
+    end
 end
