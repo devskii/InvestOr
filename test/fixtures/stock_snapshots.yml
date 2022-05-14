@@ -1,22 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+# values are in millions except per-share data
+aapl:
   ticker: AAPL
+  is_large: true
   is_prominent: true
   has_reliable_dividend: true
-  total_assets: 351002
+  total_current_assets: 118180
+  total_assets: 350662
   total_intangibles: 0
   total_goodwill: 0
-  total_current_assets: 134836
-  total_liabilities: 287912
-  total_longterm_debt: 109875
-  total_current_liabilities: 125481
-  market_cap: 2500000000
-  market_price: 157.28
+  total_current_liabilities: 127508
+  total_longterm_debt: 103323
+  total_liabilities: 283263
+  total_equity: 67399
+  common_stock: 61181
+  total_common_shares_outstanding: 16208
+  market_price: 147.11
+  eps_ttm: 6.16
   eps_last_year: 5.61
   eps_2y_ago: 3.28
   eps_3y_ago: 2.97
-  eps_4y_ago: 2.98
+  eps_4y_ago: 3.05
   eps_5y_ago: 2.3
   eps_6y_ago: 2.08
   eps_7y_ago: 2.31
@@ -36,7 +41,6 @@ two:
   total_current_liabilities: 1
   market_cap: 1
   market_price: 9.99
-  eps_this_year: 9.99
   eps_last_year: 9.99
   eps_2y_ago: 9.99
   eps_3y_ago: 9.99
@@ -46,3 +50,4 @@ two:
   eps_7y_ago: 9.99
   eps_8y_ago: 9.99
   eps_9y_ago: 9.99
+  eps_10y_ago: 9.99
