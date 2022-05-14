@@ -15,7 +15,7 @@ class StockSnapshot < ApplicationRecord
     end
 
     def is_conservatively_financed
-        common_stock >= 0.5 * total_capitalization
+        calculate_debt_to_equity_ratio <= 1
     end
 
     def calculate_debt_to_equity_ratio
