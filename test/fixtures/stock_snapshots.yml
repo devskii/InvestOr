@@ -29,25 +29,30 @@ aapl:
   eps_9y_ago: 1.42
   eps_10y_ago: 1.58
 
-two:
-  ticker: MyString
-  has_reliable_dividend: false
-  total_assets: 1
-  total_intangibles: 1
-  total_goodwill: 1
-  total_current_assets: 1
-  total_liabilities: 1
-  total_longterm_debt: 1
-  total_current_liabilities: 1
-  market_cap: 1
-  market_price: 9.99
-  eps_last_year: 9.99
-  eps_2y_ago: 9.99
-  eps_3y_ago: 9.99
-  eps_4y_ago: 9.99
-  eps_5y_ago: 9.99
-  eps_6y_ago: 9.99
-  eps_7y_ago: 9.99
-  eps_8y_ago: 9.99
-  eps_9y_ago: 9.99
-  eps_10y_ago: 9.99
+adm:
+  ticker: ADM
+  is_large: true
+  is_prominent: true
+  has_reliable_dividend: true
+  total_current_assets: 40453
+  total_assets: 64866
+  total_intangibles: 6750
+  total_goodwill: 0
+  total_current_liabilities: 28523
+  total_longterm_debt: 8752
+  total_liabilities: 41144
+  total_equity: 23722
+  common_stock: 3028
+  total_common_shares_outstanding: 563
+  market_price: 85.39
+  eps_ttm: 5.43
+  eps_last_year: 4.78
+  eps_2y_ago: 3.13
+  eps_3y_ago: 2.51
+  eps_4y_ago: 3.13
+  eps_5y_ago: 2.13
+  eps_6y_ago: 2.16
+  eps_7y_ago: 2.98
+  eps_8y_ago: 3.43
+  eps_9y_ago: 2.02
+  eps_10y_ago: 2.08
