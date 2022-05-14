@@ -28,20 +28,24 @@ class StockSnapshotTest < ActiveSupport::TestCase
   test "calculate_eps_average_past_seven_years" do
     assert stock_snapshots(:aapl).calculate_eps_average_past_seven_years == 3.09
     assert stock_snapshots(:adm).calculate_eps_average_past_seven_years == 2.97
+    assert stock_snapshots(:aep).calculate_eps_average_past_seven_years == 3.79
   end
 
   test "is_reasonably_priced" do
     assert stock_snapshots(:aapl).is_reasonably_priced == false
     assert stock_snapshots(:adm).is_reasonably_priced == false
+    assert stock_snapshots(:aep).is_reasonably_priced == false
   end
 
   test "buy?" do
     assert stock_snapshots(:aapl).buy? == false
     assert stock_snapshots(:adm).buy? == false
+    assert stock_snapshots(:aep).buy? == false
   end
 
   test "sell?" do
     assert stock_snapshots(:aapl).sell? == true
     assert stock_snapshots(:adm).sell? == false
+    assert stock_snapshots(:aep).sell? == true
   end
 end
