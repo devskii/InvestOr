@@ -33,7 +33,6 @@ class StockSnapshotsController < ApplicationController
         :total_liabilities,
         :total_longterm_debt,
         :total_current_liabilities,
-        :market_cap,
         :market_price,
         :eps_last_year,
         :eps_2y_ago,

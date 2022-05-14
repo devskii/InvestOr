@@ -1,4 +1,19 @@
 <h1><%= @stock_snapshot.ticker %></h1>
+<h2>Evaluation</h2>
+
+<% if @stock_snapshot.buy? %>
+    <p>BUY</p>
+<% else %>
+    <p>DO NOT BUY</p>
+<% end %>
+
+<% if @stock_snapshot.sell? %>
+    <p>SELL</p>
+<% else %>
+    <p>DO NOT SELL</p>
+<% end %>
+
+<h2>Data entered</h2>
 <p>Prominent? <%= @stock_snapshot.is_prominent %></p>
 <p>Dividend? <%= @stock_snapshot.has_reliable_dividend %></p>
 <p>Total Assets: <%= @stock_snapshot.total_assets %></p>

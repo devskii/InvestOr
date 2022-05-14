@@ -5,12 +5,20 @@
         <%= form.text_field :ticker %>
     </div>
     <div>
+        <%= form.label :is_large %>
+        <%= form.check_box :is_large %>
+    </div>
+    <div>
         <%= form.label :is_prominent %>
         <%= form.check_box :is_prominent %>
     </div>
     <div>
         <%= form.label :has_reliable_dividend %>
         <%= form.check_box :has_reliable_dividend %>
+    </div>
+    <div>
+        <%= form.label :total_current_assets %>
+        <%= form.number_field :total_current_assets %>
     </div>
     <div>
         <%= form.label :total_assets %>
@@ -25,28 +33,36 @@
         <%= form.number_field :total_goodwill %>
     </div>
     <div>
-        <%= form.label :total_current_assets %>
-        <%= form.number_field :total_current_assets %>
-    </div>
-    <div>
-        <%= form.label :total_liabilities %>
-        <%= form.number_field :total_liabilities %>
+        <%= form.label :total_current_liabilities %>
+        <%= form.number_field :total_current_liabilities %>
     </div>
     <div>
         <%= form.label :total_longterm_debt %>
         <%= form.number_field :total_longterm_debt %>
     </div>
     <div>
-        <%= form.label :total_current_liabilities %>
-        <%= form.number_field :total_current_liabilities %>
+        <%= form.label :total_liabilities %>
+        <%= form.number_field :total_liabilities %>
     </div>
     <div>
-        <%= form.label :market_cap %>
-        <%= form.number_field :market_cap %>
+        <%= form.label :total_equity %>
+        <%= form.number_field :total_equity %>
+    </div>
+    <div>
+        <%= form.label :common_stock %>
+        <%= form.number_field :common_stock %>
+    </div>
+    <div>
+        <%= form.label :total_common_shares_outstanding %>
+        <%= form.number_field :total_common_shares_outstanding %>
     </div>
     <div>
         <%= form.label :market_price %>
         <%= form.number_field :market_price, step: 0.01 %>
+    </div>
+    <div>
+        <%= form.label :eps_ttm %>
+        <%= form.number_field :eps_ttm, step: 0.01 %>
     </div>
     <div>
         <%= form.label :eps_last_year %>

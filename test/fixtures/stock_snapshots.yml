@@ -11,6 +11,7 @@ aapl:
   total_intangibles: 0
   total_goodwill: 0
   total_current_liabilities: 127508
+  total_debt: 119981
   total_longterm_debt: 103323
   total_liabilities: 283263
   total_equity: 67399
@@ -39,6 +40,7 @@ adm:
   total_intangibles: 6750
   total_goodwill: 0
   total_current_liabilities: 28523
+  total_debt: 13072
   total_longterm_debt: 8752
   total_liabilities: 41144
   total_equity: 23722
@@ -56,3 +58,32 @@ adm:
   eps_8y_ago: 3.43
   eps_9y_ago: 2.02
   eps_10y_ago: 2.08
+
+aep:
+  ticker: AEP
+  is_large: true
+  is_prominent: true
+  has_reliable_dividend: true
+  total_current_assets: 8268
+  total_assets: 89831
+  total_intangibles: 0
+  total_goodwill: 53
+  total_current_liabilities: 13569
+  total_debt: 37244
+  total_longterm_debt: 30856
+  total_liabilities: 65985
+  total_equity: 23846
+  common_stock: 3411
+  total_common_shares_outstanding: 514
+  market_price: 99.69
+  eps_ttm: 5.21
+  eps_last_year: 4.97
+  eps_2y_ago: 4.44
+  eps_3y_ago: 3.89
+  eps_4y_ago: 3.9
+  eps_5y_ago: 3.89
+  eps_6y_ago: 1.24
+  eps_7y_ago: 4.17
+  eps_8y_ago: 3.34
+  eps_9y_ago: 3.04
+  eps_10y_ago: 2.6
