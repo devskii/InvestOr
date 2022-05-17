@@ -23,17 +23,23 @@ class StockSnapshotsController < ApplicationController
   private
     def stock_snapshot_params
       params.require(:stock_snapshot).permit(
+        :common_stock,
         :ticker,
+        :is_large,
         :is_prominent,
         :has_reliable_dividend,
         :total_assets,
+        :total_debt,
+        :total_equity,
         :total_intangibles,
         :total_goodwill,
         :total_current_assets,
         :total_liabilities,
         :total_longterm_debt,
+        :total_common_shares_outstanding,
         :total_current_liabilities,
         :market_price,
+        :eps_ttm,
         :eps_last_year,
         :eps_2y_ago,
         :eps_3y_ago,

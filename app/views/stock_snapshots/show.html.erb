@@ -14,6 +14,7 @@
 <% end %>
 
 <h2>Data entered</h2>
+<p>Large? <%= @stock_snapshot.is_large %></p>
 <p>Prominent? <%= @stock_snapshot.is_prominent %></p>
 <p>Dividend? <%= @stock_snapshot.has_reliable_dividend %></p>
 <p>Total Assets: <%= @stock_snapshot.total_assets %></p>
@@ -21,14 +22,21 @@
 <p>Total Goodwill: <%= @stock_snapshot.total_goodwill %></p>
 <p>Total Current Assets: <%= @stock_snapshot.total_current_assets %></p>
 <p>Total Liabilities: <%= @stock_snapshot.total_liabilities %></p>
+<p>Total Debt: <%= @stock_snapshot.total_debt %></p>
 <p>Total Longterm Debt: <%= @stock_snapshot.total_longterm_debt %></p>
 <p>Total Current Liabilities: <%= @stock_snapshot.total_current_liabilities %></p>
-<p>Market Cap: <%= @stock_snapshot.market_cap %></p>
+<p>Total Equity: <%= @stock_snapshot.total_equity %></p>
+<p>Shareholders' Equity in Common Stock: <%= @stock_snapshot.common_stock %></p>
+<p>Total Common Shares Outstanding: <%= @stock_snapshot.total_common_shares_outstanding %></p>
 <p>Market Price: <%= @stock_snapshot.market_price %></p>
 <table>
     <tr>
         <th>Year</th>
         <th>Earnings Per Share, diluted GAAP</th>
+    </tr>
+    <tr>
+        <td>Trailing Twelve Months</td>
+        <td><%= @stock_snapshot.eps_ttm %></td>
     </tr>
     <tr>
         <td>Last year</td>
