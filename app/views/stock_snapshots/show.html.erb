@@ -1,34 +1,72 @@
 <h1><%= @stock_snapshot.ticker %></h1>
 <h2>Evaluation</h2>
 
+<h3>Recommendations</h3>
 <% if @stock_snapshot.buy? %>
     <p>BUY</p>
 <% else %>
     <p>DO NOT BUY</p>
 <% end %>
-
 <% if @stock_snapshot.sell? %>
     <p>SELL</p>
 <% else %>
     <p>DO NOT SELL</p>
 <% end %>
 
-<h2>Data entered</h2>
-<p>Large? <%= @stock_snapshot.is_large %></p>
-<p>Prominent? <%= @stock_snapshot.is_prominent %></p>
-<p>Dividend? <%= @stock_snapshot.has_reliable_dividend %></p>
-<p>Total Assets: <%= @stock_snapshot.total_assets %></p>
-<p>Total Intangibles: <%= @stock_snapshot.total_intangibles %></p>
-<p>Total Goodwill: <%= @stock_snapshot.total_goodwill %></p>
-<p>Total Current Assets: <%= @stock_snapshot.total_current_assets %></p>
-<p>Total Liabilities: <%= @stock_snapshot.total_liabilities %></p>
-<p>Total Debt: <%= @stock_snapshot.total_debt %></p>
-<p>Total Longterm Debt: <%= @stock_snapshot.total_longterm_debt %></p>
-<p>Total Current Liabilities: <%= @stock_snapshot.total_current_liabilities %></p>
-<p>Total Equity: <%= @stock_snapshot.total_equity %></p>
-<p>Shareholders' Equity in Common Stock: <%= @stock_snapshot.common_stock %></p>
-<p>Total Common Shares Outstanding: <%= @stock_snapshot.total_common_shares_outstanding %></p>
-<p>Market Price: <%= @stock_snapshot.market_price %></p>
+<h3>Reasoning</h3>
+<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns. The fundamental rules are as follows:</p>
+<ol style="line-width: 0.5rem">
+    
+</ol>
+<%# Fundamental Rules %>
+    <%# 1. You should own at least 10 and not more than 30 stocks. %>
+    <%# 1. The company is large, prominent, and conservatively financed. %>
+    <%# 2. The company has at least a 10-year record of continuous dividend payments. %>
+    <%# 3. The price you pay for a stock should not exceed 25 times average earnings per share
+            over the last 7 years, and not more than 20 times those of the last 12 month period.
+     %>
+<% if @stock_snapshot.satisfies_fundamental_rules %>
+    <p>
+        Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, we recommend you not to sell if you already own it.
+    </p>
+<% else %>
+    <p>
+        Because <%= @stock_snapshot.ticker %> does not satisfy all of these fundamental rules, we recommend against buying this stock, and that you to sell this stock if you already own it.
+    </p>
+<% end %>
+<%# Suggested Selection Criteria %>
+    <%# 1. The company is large, not having less than $100 million of annual sales for an industrial
+            company, and not less than $50 million in assets for a public utility.
+     %>
+    <%# 2. A current ratio ≥ 2 for industrial companies. Also, long-term debt should not exceed the
+            net current assets (or “working capital”). For public utilities the debt should not exceed
+            twice the stock equity (at book value).
+    %>
+    <%# 3. The stock has had some positive earnings each of the last 10 years. %>
+    <%# 4. Uninterrupted dividend payments for the last 20 years. %>
+    <%# 5. A minimum increase of at least one-third in per-share earnings in the past ten years using
+            three-year averages at the beginning and end.
+     %>
+    <%# 6. Current price should not be more than 15 times average earnings of the past three years. %>
+
+<h2>Snapshot Data</h2>
+<div style="line-height: 0.5rem">
+    <p>Large? <%= @stock_snapshot.is_large %></p>
+    <p>Prominent? <%= @stock_snapshot.is_prominent %></p>
+    <p>Dividend? <%= @stock_snapshot.has_reliable_dividend %></p>
+    <p>Total Assets: <%= @stock_snapshot.total_assets %></p>
+    <p>Total Intangibles: <%= @stock_snapshot.total_intangibles %></p>
+    <p>Total Goodwill: <%= @stock_snapshot.total_goodwill %></p>
+    <p>Total Current Assets: <%= @stock_snapshot.total_current_assets %></p>
+    <p>Total Liabilities: <%= @stock_snapshot.total_liabilities %></p>
+    <p>Total Debt: <%= @stock_snapshot.total_debt %></p>
+    <p>Total Longterm Debt: <%= @stock_snapshot.total_longterm_debt %></p>
+    <p>Total Current Liabilities: <%= @stock_snapshot.total_current_liabilities %></p>
+    <p>Total Equity: <%= @stock_snapshot.total_equity %></p>
+    <p>Shareholders' Equity in Common Stock: <%= @stock_snapshot.common_stock %></p>
+    <p>Total Common Shares Outstanding: <%= @stock_snapshot.total_common_shares_outstanding %></p>
+    <p>Market Price: <%= @stock_snapshot.market_price %></p>
+</div>
 <table>
     <tr>
         <th>Year</th>
