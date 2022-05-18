@@ -16,7 +16,7 @@
 <h3>Reasoning</h3>
 <p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns. The fundamental rules are as follows:</p>
 <ol style="line-width: 0.5rem">
-    
+
 </ol>
 <%# Fundamental Rules %>
     <%# 1. You should own at least 10 and not more than 30 stocks. %>
@@ -27,11 +27,11 @@
      %>
 <% if @stock_snapshot.satisfies_fundamental_rules %>
     <p>
-        Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, we recommend you not to sell if you already own it.
+        Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, the policy recommends you not to sell if you already own it.
     </p>
 <% else %>
     <p>
-        Because <%= @stock_snapshot.ticker %> does not satisfy all of these fundamental rules, we recommend against buying this stock, and that you to sell this stock if you already own it.
+        Because <%= @stock_snapshot.ticker %> does not satisfy all of these fundamental rules, the policy recommends against buying this stock, and that you to sell this stock if you already own it.
     </p>
 <% end %>
 <%# Suggested Selection Criteria %>
