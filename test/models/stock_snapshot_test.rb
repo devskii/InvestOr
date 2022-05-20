@@ -1,12 +1,6 @@
 require 'test_helper'
 
 class StockSnapshotTest < ActiveSupport::TestCase
-  test "total_capitalization" do
-    assert stock_snapshots(:aapl).total_capitalization == 170722
-    assert stock_snapshots(:adm).total_capitalization == 32474
-    assert stock_snapshots(:aep).total_capitalization == 54702
-  end
-
   test "is_conservatively_financed" do
     assert stock_snapshots(:aapl).is_conservatively_financed == false
     assert stock_snapshots(:adm).is_conservatively_financed == true

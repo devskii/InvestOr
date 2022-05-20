@@ -30,8 +30,4 @@ class StockSnapshot < ApplicationRecord
         (market_price <= 20 * eps_ttm) &&
         (market_price <= 25 * calculate_eps_average_past_seven_years)
     end
-
-    def total_capitalization
-        total_longterm_debt + total_equity
-    end
 end

@@ -35,7 +35,6 @@ class StockSnapshotsController < ApplicationController
         :total_goodwill,
         :total_current_assets,
         :total_liabilities,
-        :total_longterm_debt,
         :total_common_shares_outstanding,
         :total_current_liabilities,
         :market_price,
