@@ -49,4 +49,11 @@ class StockSnapshotTest < ActiveSupport::TestCase
     assert stock_snapshots(:aep).sell? == true
     assert stock_snapshots(:tsla).sell? == true
   end
+
+  test "has_positive_earnings_for_past_ten_years" do
+    assert stock_snapshots(:aapl).has_positive_earnings_for_past_ten_years == true
+    assert stock_snapshots(:adm).has_positive_earnings_for_past_ten_years == true
+    assert stock_snapshots(:aep).has_positive_earnings_for_past_ten_years == true
+    assert stock_snapshots(:tsla).has_positive_earnings_for_past_ten_years == false
+  end
 end

@@ -26,6 +26,22 @@ class StockSnapshot < ApplicationRecord
         ((eps_last_year + eps_2y_ago + eps_3y_ago + eps_4y_ago + eps_5y_ago + eps_6y_ago + eps_7y_ago) / 7).round(2)
     end
 
+    def has_positive_earnings_for_past_ten_years
+        [
+            eps_ttm,
+            eps_last_year,
+            eps_2y_ago,
+            eps_3y_ago,
+            eps_4y_ago,
+            eps_5y_ago,
+            eps_6y_ago,
+            eps_7y_ago,
+            eps_8y_ago,
+            eps_9y_ago,
+            eps_10y_ago,
+        ].reduce(true) { |union, eps| union && eps >= 0 }
+    end
+
     def is_reasonably_priced
         (market_price <= 20 * eps_ttm) &&
         (market_price <= 25 * calculate_eps_average_past_seven_years)
