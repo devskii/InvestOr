@@ -20,7 +20,7 @@
     <li>You should own 10-30 stocks.</li>
     <li>Each company is large, prominent, and conservatively financed.</li>
     <li>Each company has at least a 10-year record of continuous dividend payments.</li>
-    <li>The price you pay for a stock should not exceed 25 times average earnings per share over the last 7 years, and not more than 20 times those of the last 12 month period.</li>
+    <li>The price you pay for a stock should not exceed 25 times average earnings per share over the last seven years, and not more than 20 times those of the last twelve month period.</li>
 </ol>
 
 <% if @stock_snapshot.buy? %>
@@ -28,8 +28,13 @@
 
 <% elsif @stock_snapshot.satisfies_fundamental_rules %>
     <p>
-        Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, the policy recommends you not to sell your current holdings.
+        Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, the policy recommends you not to sell your current holdings. However, since the market price ($<%= @stock_snapshot.market_price %>) exceeds the policy-recommended maximum price, you should not buy more.
     </p>
+    <p>The smaller of the following dollar amounts is the maximum recommended price to pay for <%= @stock_snapshot.ticker %>:</p>
+    <ul>
+        <li>$<%= 25 * @stock_snapshot.calculate_eps_average_past_seven_years %> = 25 * average earnings per share over the last seven years (<%= @stock_snapshot.calculate_eps_average_past_seven_years %>)</li>
+        <li>$<%= 20 * @stock_snapshot.eps_ttm %> = 20 * earnings per share over the last twelve month period (<%= @stock_snapshot.eps_ttm %>)</li>
+    </ul>
 <% else %>
     <p>The policy recommends against owning <%= @stock_snapshot.ticker %> because these rules are broken:</p>
     <ul>
