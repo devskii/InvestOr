@@ -87,3 +87,32 @@ aep:
   eps_8y_ago: 3.34
   eps_9y_ago: 3.04
   eps_10y_ago: 2.6
+
+tsla:
+  ticker: TSLA
+  is_large: true
+  is_prominent: true
+  has_reliable_dividend: false
+  total_current_assets: 29050
+  total_assets: 66038
+  total_intangibles: 254
+  total_goodwill: 200
+  total_current_liabilities: 21455
+  total_debt: 4812
+  total_longterm_debt: 3153
+  total_liabilities: 31953
+  total_equity: 34085
+  common_stock: 1
+  total_common_shares_outstanding: 1036
+  market_price: 709.42
+  eps_ttm: 7.39
+  eps_last_year: 4.9
+  eps_2y_ago: 0.64
+  eps_3y_ago: -0.98
+  eps_4y_ago: -1.14
+  eps_5y_ago: -2.37
+  eps_6y_ago: -0.94
+  eps_7y_ago: -1.39
+  eps_8y_ago: -0.47
+  eps_9y_ago: -0.12
+  eps_10y_ago: -0.74
