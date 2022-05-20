@@ -14,25 +14,38 @@
 <% end %>
 
 <h3>Reasoning</h3>
-<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns. The fundamental rules are as follows:</p>
+<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns.</p>
+<p>These are the fundamental rules:</p>
 <ol style="line-width: 0.5rem">
-
+    <li>You should own 10-30 stocks.</li>
+    <li>Each company is large, prominent, and conservatively financed.</li>
+    <li>Each company has at least a 10-year record of continuous dividend payments.</li>
+    <li>The price you pay for a stock should not exceed 25 times average earnings per share over the last 7 years, and not more than 20 times those of the last 12 month period.</li>
 </ol>
-<%# Fundamental Rules %>
-    <%# 1. You should own at least 10 and not more than 30 stocks. %>
-    <%# 1. The company is large, prominent, and conservatively financed. %>
-    <%# 2. The company has at least a 10-year record of continuous dividend payments. %>
-    <%# 3. The price you pay for a stock should not exceed 25 times average earnings per share
-            over the last 7 years, and not more than 20 times those of the last 12 month period.
-     %>
-<% if @stock_snapshot.satisfies_fundamental_rules %>
+
+<% if @stock_snapshot.buy? %>
+    <p>Because <%= @stock_snapshot.ticker %> satisfies all fundamental rules and is reasonably priced, the policy recommends to buy the stock.</p>
+
+<% elsif @stock_snapshot.satisfies_fundamental_rules %>
     <p>
-        Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, the policy recommends you not to sell if you already own it.
+        Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, the policy recommends you not to sell your current holdings.
     </p>
 <% else %>
-    <p>
-        Because <%= @stock_snapshot.ticker %> does not satisfy all of these fundamental rules, the policy recommends against buying this stock, and that you to sell this stock if you already own it.
-    </p>
+    <p>The policy recommends against owning <%= @stock_snapshot.ticker %> because these rules are broken:</p>
+    <ul>
+        <% if !@stock_snapshot.is_large %>
+            <li><%= @stock_snapshot.ticker %> is not large.</li>
+        <% end %>
+        <% if !@stock_snapshot.is_prominent %>
+            <li><%= @stock_snapshot.ticker %> is not prominent.</li>
+        <% end %>
+        <% if !@stock_snapshot.is_conservatively_financed %>
+            <li><%= @stock_snapshot.ticker %> is not conservatively financed because the Debt-to-Equity ratio (<%= @stock_snapshot.calculate_debt_to_equity_ratio %>) is greater than 1.</li>
+        <% end %>
+        <% if !@stock_snapshot.has_reliable_dividend %>
+            <li><%= @stock_snapshot.ticker %> does not have a reliable dividend.</li>
+        <% end %>
+    </ul>
 <% end %>
 <%# Suggested Selection Criteria %>
     <%# 1. The company is large, not having less than $100 million of annual sales for an industrial
