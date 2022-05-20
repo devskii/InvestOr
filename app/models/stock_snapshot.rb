@@ -11,7 +11,7 @@ class StockSnapshot < ApplicationRecord
         is_large &&
         is_prominent &&
         is_conservatively_financed &&
-        has_reliable_dividend
+        has_reliable_dividend_over_the_past_10_years
     end
 
     def is_conservatively_financed

@@ -5,7 +5,8 @@ aapl:
   ticker: AAPL
   is_large: true
   is_prominent: true
-  has_reliable_dividend: true
+  has_reliable_dividend_over_the_past_10_years: true
+  has_reliable_dividend_over_the_past_20_years: false
   total_current_assets: 118180
   total_assets: 350662
   total_intangibles: 0
@@ -33,7 +34,8 @@ adm:
   ticker: ADM
   is_large: true
   is_prominent: true
-  has_reliable_dividend: true
+  has_reliable_dividend_over_the_past_10_years: true
+  has_reliable_dividend_over_the_past_20_years: false
   total_current_assets: 40453
   total_assets: 64866
   total_intangibles: 6750
@@ -61,7 +63,8 @@ aep:
   ticker: AEP
   is_large: true
   is_prominent: true
-  has_reliable_dividend: true
+  has_reliable_dividend_over_the_past_10_years: true
+  has_reliable_dividend_over_the_past_20_years: false
   total_current_assets: 8268
   total_assets: 89831
   total_intangibles: 0
@@ -89,7 +92,8 @@ tsla:
   ticker: TSLA
   is_large: true
   is_prominent: true
-  has_reliable_dividend: false
+  has_reliable_dividend_over_the_past_10_years: false
+  has_reliable_dividend_over_the_past_20_years: false
   total_current_assets: 29050
   total_assets: 66038
   total_intangibles: 254
