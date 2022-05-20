@@ -14,9 +14,9 @@
     <p>DO NOT SELL</p>
 <% end %>
 
-<h3>Reasoning</h3>
 <p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns.</p>
-<p>These are the fundamental rules:</p>
+
+<h3>Fundamental Rules</h3>
 <ol style="line-width: 0.5rem">
     <li>You should own 10-30 stocks.</li>
     <li>Each company is large, prominent, and conservatively financed.</li>
@@ -24,14 +24,14 @@
     <li>The price you pay for a stock should not exceed 25 times average earnings per share over the last seven years, and not more than 20 times those of the last twelve month period.</li>
 </ol>
 
-<% if @stock_snapshot.buy? %>
-    <p>Because <%= @stock_snapshot.ticker %> satisfies all fundamental rules and is reasonably priced, the policy recommends to buy the stock.</p>
+<% if @stock_snapshot.satisfies_fundamental_rules %>
+    <% if @stock_snapshot.buy? %>
+        <p>Because <%= @stock_snapshot.ticker %> satisfies all fundamental rules and is reasonably priced, the policy recommends you can buy the stock.</p>
+    <% else %>
+        <p>Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, the policy recommends you not to sell your current holdings. However, since the market price exceeds the policy-recommended maximum price, you should not buy more.</p>
+    <% end %>
 
-<% elsif @stock_snapshot.satisfies_fundamental_rules %>
-    <p>
-        Because <%= @stock_snapshot.ticker %> satisfies all of these fundamental rules, the policy recommends you not to sell your current holdings. However, since the market price ($<%= @stock_snapshot.market_price %>) exceeds the policy-recommended maximum price, you should not buy more.
-    </p>
-    <p>The smaller of the following dollar amounts is the maximum recommended price to pay for <%= @stock_snapshot.ticker %>:</p>
+    <p>The smaller of the following dollar amounts is the maximum recommended price to pay for <%= @stock_snapshot.ticker %> (current market price is $<%= @stock_snapshot.market_price %>):</p>
     <ul>
         <li>$<%= 25 * @stock_snapshot.calculate_eps_average_past_seven_years %> = 25 * average earnings per share over the last seven years (<%= @stock_snapshot.calculate_eps_average_past_seven_years %>)</li>
         <li>$<%= 20 * @stock_snapshot.eps_ttm %> = 20 * earnings per share over the last twelve month period (<%= @stock_snapshot.eps_ttm %>)</li>
