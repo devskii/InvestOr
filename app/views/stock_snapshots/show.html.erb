@@ -1,6 +1,7 @@
 <h1><%= @stock_snapshot.ticker %></h1>
 <%= button_to 'Go to Existing Stock Snapshots', '/', method: :get %>
 <h2>Evaluation</h2>
+<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns.</p>
 
 <h3>Recommendations</h3>
 <% if @stock_snapshot.buy? %>
@@ -13,8 +14,6 @@
 <% else %>
     <p>DO NOT SELL</p>
 <% end %>
-
-<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns.</p>
 
 <h3>Fundamental Rules</h3>
 <ol style="line-width: 0.5rem">
