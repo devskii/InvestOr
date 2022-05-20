@@ -26,6 +26,14 @@ class StockSnapshot < ApplicationRecord
         ((eps_last_year + eps_2y_ago + eps_3y_ago + eps_4y_ago + eps_5y_ago + eps_6y_ago + eps_7y_ago) / 7).round(2)
     end
 
+    def calculate_eps_average_past_three_years
+        ((eps_last_year + eps_2y_ago + eps_3y_ago) / 3).round(2)
+    end
+
+    def has_excellent_price_based_on_3yr_earnings
+        market_price <= 15 * calculate_eps_average_past_three_years
+    end
+
     def has_positive_earnings_for_past_ten_years
         [
             eps_ttm,
