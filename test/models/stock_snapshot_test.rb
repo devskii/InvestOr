@@ -43,6 +43,13 @@ class StockSnapshotTest < ActiveSupport::TestCase
     assert stock_snapshots(:tsla).calculate_eps_average_three_years_at_beginning_of_decade == -0.44
   end
 
+  test "current_ratio" do
+    assert stock_snapshots(:aapl).current_ratio == 0.93
+    assert stock_snapshots(:adm).current_ratio == 1.42
+    assert stock_snapshots(:aep).current_ratio == 0.61
+    assert stock_snapshots(:tsla).current_ratio == 1.35
+  end
+
   test "earnings_percentage_increase_over_decade" do
     assert stock_snapshots(:aapl).earnings_percentage_increase_over_decade == 156
     assert stock_snapshots(:adm).earnings_percentage_increase_over_decade == 38

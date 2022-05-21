@@ -34,6 +34,10 @@ class StockSnapshot < ApplicationRecord
         ((eps_8y_ago + eps_9y_ago + eps_10y_ago) / 3).round(2)
     end
 
+    def current_ratio
+        (total_current_assets.to_f / total_current_liabilities.to_f).round(2)
+    end
+
     def earnings_percentage_increase_over_decade
         start = calculate_eps_average_three_years_at_beginning_of_decade
         finish = calculate_eps_average_past_three_years
