@@ -1,9 +1,6 @@
 <h1><%= @stock_snapshot.ticker %></h1>
 <%= button_to 'Go to Existing Stock Snapshots', '/', method: :get %>
-<h2>Evaluation</h2>
-<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns.</p>
-
-<h3>Recommendations</h3>
+<h2>Recommendations</h2>
 <% if @stock_snapshot.buy? %>
     <p>BUY</p>
 <% else %>
@@ -15,7 +12,7 @@
     <p>DO NOT SELL</p>
 <% end %>
 
-<h3>Fundamental Rules</h3>
+<h2>Fundamental Rules</h2>
 <ol style="line-width: 0.5rem">
     <li>You should own 10-30 stocks.</li>
     <li>Each company is large, prominent, and conservatively financed.</li>
@@ -54,7 +51,7 @@
 <% end %>
 
 <% if @stock_snapshot.satisfies_fundamental_rules %>
-    <h3>Suggested Criteria</h3>
+    <h2>Suggested Criteria</h2>
     <ol style="line-width: 0.5rem">
         <li>The company is large, not having less than $100 million of annual sales for an industrial company, and not less than $50 million in assets for a public utility.</li>
         <li>A current ratio ≥ 2 for industrial companies. Also, long-term debt should not exceed the net current assets (or “working capital”). For public utilities the debt should not exceed twice the stock equity (at book value).</li>
@@ -133,3 +130,6 @@
         <td><%= @stock_snapshot.eps_10y_ago %></td>
     </tr>
 </table>
+
+<h2>Explanation</h2>
+<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns.</p>
