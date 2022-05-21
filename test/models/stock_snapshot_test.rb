@@ -36,6 +36,20 @@ class StockSnapshotTest < ActiveSupport::TestCase
     assert stock_snapshots(:tsla).calculate_eps_average_past_three_years == 1.52
   end
 
+  test "calculate_eps_average_three_years_at_beginning_of_decade" do
+    assert stock_snapshots(:aapl).calculate_eps_average_three_years_at_beginning_of_decade == 1.54
+    assert stock_snapshots(:adm).calculate_eps_average_three_years_at_beginning_of_decade == 2.51
+    assert stock_snapshots(:aep).calculate_eps_average_three_years_at_beginning_of_decade == 2.99
+    assert stock_snapshots(:tsla).calculate_eps_average_three_years_at_beginning_of_decade == -0.44
+  end
+
+  test "earnings_percentage_increase_over_decade" do
+    assert stock_snapshots(:aapl).earnings_percentage_increase_over_decade == 156
+    assert stock_snapshots(:adm).earnings_percentage_increase_over_decade == 38
+    assert stock_snapshots(:aep).earnings_percentage_increase_over_decade == 48
+    assert stock_snapshots(:tsla).earnings_percentage_increase_over_decade == -445
+  end
+
   test "is_reasonably_priced" do
     assert stock_snapshots(:aapl).is_reasonably_priced == false
     assert stock_snapshots(:adm).is_reasonably_priced == false

@@ -59,7 +59,7 @@
     <li>A current ratio ≥ 2 for industrial companies. Also, long-term debt should not exceed the net current assets (or “working capital”). For public utilities the debt should not exceed twice the stock equity (at book value).</li>
     <li><% if @stock_snapshot.has_positive_earnings_for_past_ten_years %>✓<% else %>❌<% end %> The stock has had some positive earnings each of the last 10 years.</li>
     <li><% if @stock_snapshot.has_reliable_dividend_over_the_past_20_years %>✓<% else %>❌<% end %> Uninterrupted dividend payments for the last 20 years.</li>
-    <li>A minimum increase of at least one-third in per-share earnings in the past ten years using three-year averages at the beginning and end.</li>
+    <li><% if @stock_snapshot.earnings_percentage_increase_over_decade >= 33 %>✓<% else %>❌<% end %> A minimum increase of at least one-third in per-share earnings in the past ten years (<%= @stock_snapshot.earnings_percentage_increase_over_decade %>%) using three-year averages at the beginning (<%= @stock_snapshot.calculate_eps_average_three_years_at_beginning_of_decade %>) and end (<%= @stock_snapshot.calculate_eps_average_past_three_years %>).</li>
     <li><% if @stock_snapshot.has_excellent_price_based_on_3yr_earnings %>✓<% else %>❌<% end %> Current market price ($<%= @stock_snapshot.market_price %>) should not be more than average earnings of the past three years (<%= @stock_snapshot.calculate_eps_average_past_three_years %>) times 15 ($<%= 15 * @stock_snapshot.calculate_eps_average_past_three_years %>).</li>
 </ol>
 

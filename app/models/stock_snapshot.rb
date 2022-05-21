@@ -30,6 +30,17 @@ class StockSnapshot < ApplicationRecord
         ((eps_last_year + eps_2y_ago + eps_3y_ago) / 3).round(2)
     end
 
+    def calculate_eps_average_three_years_at_beginning_of_decade
+        ((eps_8y_ago + eps_9y_ago + eps_10y_ago) / 3).round(2)
+    end
+
+    def earnings_percentage_increase_over_decade
+        start = calculate_eps_average_three_years_at_beginning_of_decade
+        finish = calculate_eps_average_past_three_years
+        
+        ((finish - start) / start).round(2) * 100
+    end
+
     def has_excellent_price_based_on_3yr_earnings
         market_price <= 15 * calculate_eps_average_past_three_years
     end
