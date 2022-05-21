@@ -22,7 +22,7 @@
 
 <% if @stock_snapshot.satisfies_fundamental_rules %>
     <% if @stock_snapshot.buy? %>
-        <p>Because <%= @stock_snapshot.ticker %> satisfies all fundamental rules and is reasonably priced, the policy recommends you can buy the stock.</p>
+        <p>The policy recommends buying <%= @stock_snapshot.ticker %> because it satisfies all fundamental rules, and its market price ($<%= @stock_snapshot.market_price %>) is less than the policy-recommended maximum price ($<%= @stock_snapshot.recommended_max_purchase_price %>).</p>
     <% else %>
         <p>The policy recommends against buying <%= @stock_snapshot.ticker %> because the market price ($<%= @stock_snapshot.market_price %>) exceeds the policy-recommended maximum price ($<%= @stock_snapshot.recommended_max_purchase_price %>).</p>
         <p>The policy recommends to keep your current holdings because <%= @stock_snapshot.ticker %> satisfies the fundamental rules.</p>
