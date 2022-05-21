@@ -24,15 +24,9 @@
     <% if @stock_snapshot.buy? %>
         <p>Because <%= @stock_snapshot.ticker %> satisfies all fundamental rules and is reasonably priced, the policy recommends you can buy the stock.</p>
     <% else %>
-        <p>The policy recommends against buying <%= @stock_snapshot.ticker %> because the market price ($<%= @stock_snapshot.market_price %>) exceeds the policy-recommended maximum price.</p>
+        <p>The policy recommends against buying <%= @stock_snapshot.ticker %> because the market price ($<%= @stock_snapshot.market_price %>) exceeds the policy-recommended maximum price ($<%= @stock_snapshot.recommended_max_purchase_price %>).</p>
         <p>The policy recommends to keep your current holdings because <%= @stock_snapshot.ticker %> satisfies the fundamental rules.</p>
     <% end %>
-
-    <p>The smaller of the following dollar amounts is the maximum recommended price to pay for <%= @stock_snapshot.ticker %> (current market price is $<%= @stock_snapshot.market_price %>):</p>
-    <ul>
-        <li>$<%= 25 * @stock_snapshot.calculate_eps_average_past_seven_years %> = 25 * average earnings per share over the last seven years (<%= @stock_snapshot.calculate_eps_average_past_seven_years %>)</li>
-        <li>$<%= 20 * @stock_snapshot.eps_ttm %> = 20 * earnings per share over the last twelve month period (<%= @stock_snapshot.eps_ttm %>)</li>
-    </ul>
 <% else %>
     <p>The policy recommends against owning <%= @stock_snapshot.ticker %> because these rules are broken:</p>
     <ul>

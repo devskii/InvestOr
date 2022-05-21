@@ -50,6 +50,13 @@ class StockSnapshotTest < ActiveSupport::TestCase
     assert stock_snapshots(:tsla).earnings_percentage_increase_over_decade == -445
   end
 
+  test "recommended_max_purchase_price" do
+    assert stock_snapshots(:aapl).recommended_max_purchase_price == 77.25
+    assert stock_snapshots(:adm).recommended_max_purchase_price == 74.25
+    assert stock_snapshots(:aep).recommended_max_purchase_price == 94.75
+    assert stock_snapshots(:tsla).recommended_max_purchase_price == -4.50
+  end
+
   test "is_reasonably_priced" do
     assert stock_snapshots(:aapl).is_reasonably_priced == false
     assert stock_snapshots(:adm).is_reasonably_priced == false

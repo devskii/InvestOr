@@ -41,6 +41,13 @@ class StockSnapshot < ApplicationRecord
         ((finish - start) / start).round(2) * 100
     end
 
+    def recommended_max_purchase_price
+        price_limit_long = 25 * calculate_eps_average_past_seven_years
+        price_limit_short = 20 * eps_ttm
+
+        [price_limit_long, price_limit_short].min
+    end
+
     def has_excellent_price_based_on_3yr_earnings
         market_price <= 15 * calculate_eps_average_past_three_years
     end
@@ -62,7 +69,6 @@ class StockSnapshot < ApplicationRecord
     end
 
     def is_reasonably_priced
-        (market_price <= 20 * eps_ttm) &&
-        (market_price <= 25 * calculate_eps_average_past_seven_years)
+        market_price <= recommended_max_purchase_price
     end
 end
