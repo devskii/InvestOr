@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_21_234731) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_22_192253) do
   create_table "stock_snapshots", force: :cascade do |t|
     t.string "ticker"
     t.boolean "is_prominent"
@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_234731) do
     t.integer "total_debt"
     t.boolean "has_reliable_dividend_over_the_past_20_years"
     t.integer "total_longterm_debt"
+    t.string "sector"
   end
 
 end

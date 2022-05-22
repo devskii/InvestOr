@@ -5,6 +5,10 @@
         <%= form.text_field :ticker %>
     </div>
     <div>
+        <%= form.label :sector %>
+        <%= form.select :sector, ["Other", "Industrials", "Utilities"] %>
+    </div>
+    <div>
         <%= form.label :is_large %>
         <%= form.check_box :is_large %>
     </div>

@@ -24,6 +24,7 @@ class StockSnapshotsController < ApplicationController
     def stock_snapshot_params
       params.require(:stock_snapshot).permit(
         :common_stock,
+        :sector,
         :ticker,
         :is_large,
         :is_prominent,
