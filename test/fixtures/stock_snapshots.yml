@@ -12,6 +12,7 @@ aapl:
   total_intangibles: 0
   total_goodwill: 0
   total_current_liabilities: 127508
+  total_longterm_debt: 119981
   total_debt: 119981
   total_liabilities: 283263
   total_equity: 67399
@@ -41,6 +42,7 @@ adm:
   total_intangibles: 6750
   total_goodwill: 0
   total_current_liabilities: 28523
+  total_longterm_debt: 13072
   total_debt: 13072
   total_liabilities: 41144
   total_equity: 23722
@@ -70,6 +72,7 @@ aep:
   total_intangibles: 0
   total_goodwill: 53
   total_current_liabilities: 13569
+  total_longterm_debt: 37244
   total_debt: 37244
   total_liabilities: 65985
   total_equity: 23846
@@ -99,6 +102,7 @@ tsla:
   total_intangibles: 254
   total_goodwill: 200
   total_current_liabilities: 21455
+  total_longterm_debt: 4812
   total_debt: 4812
   total_liabilities: 31953
   total_equity: 34085

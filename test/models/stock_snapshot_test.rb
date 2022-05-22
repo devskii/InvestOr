@@ -91,4 +91,11 @@ class StockSnapshotTest < ActiveSupport::TestCase
     assert stock_snapshots(:aep).has_positive_earnings_for_past_ten_years == true
     assert stock_snapshots(:tsla).has_positive_earnings_for_past_ten_years == false
   end
+
+  test "working_capital" do
+    assert stock_snapshots(:aapl).working_capital == -9328
+    assert stock_snapshots(:adm).working_capital == 11930
+    assert stock_snapshots(:aep).working_capital == -5301
+    assert stock_snapshots(:tsla).working_capital == 7595
+  end
 end

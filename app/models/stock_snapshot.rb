@@ -75,4 +75,8 @@ class StockSnapshot < ApplicationRecord
     def is_reasonably_priced
         market_price <= recommended_max_purchase_price
     end
+
+    def working_capital
+        total_current_assets - total_current_liabilities
+    end
 end

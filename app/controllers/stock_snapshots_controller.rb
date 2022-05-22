@@ -30,6 +30,7 @@ class StockSnapshotsController < ApplicationController
         :has_reliable_dividend_over_the_past_10_years,
         :has_reliable_dividend_over_the_past_20_years,
         :total_assets,
+        :total_longterm_debt,
         :total_debt,
         :total_equity,
         :total_intangibles,
