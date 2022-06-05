@@ -1,25 +1,18 @@
 <h1><%= @stock_snapshot.ticker %></h1>
 <%= button_to 'Go to Existing Stock Snapshots', '/', method: :get %>
 <h2>Recommendations</h2>
-<% if @stock_snapshot.buy? %>
-    <p>BUY</p>
-<% else %>
-    <p>DO NOT BUY</p>
-<% end %>
-<% if @stock_snapshot.sell? %>
-    <p>SELL</p>
-<% else %>
-    <p>DO NOT SELL</p>
-<% end %>
-
-<h2>Fundamental Rules</h2>
-<ol style="line-width: 0.5rem">
-    <li>You should own 10-30 stocks.</li>
-    <li>Each company is large, prominent, and conservatively financed.</li>
-    <li>Each company has at least a 10-year record of continuous dividend payments.</li>
-    <li>The price you pay for a stock should not exceed 25 times average earnings per share over the last seven years, and not more than 20 times those of the last twelve month period.</li>
-</ol>
-
+<ul>
+    <% if @stock_snapshot.buy? %>
+        <li>BUY</li>
+    <% else %>
+        <li>DO NOT BUY</li>
+    <% end %>
+    <% if @stock_snapshot.sell? %>
+        <li>SELL</li>
+    <% else %>
+        <li>DO NOT SELL</li>
+    <% end %>
+</ul>
 <% if @stock_snapshot.satisfies_fundamental_rules %>
     <% if @stock_snapshot.buy? %>
         <p>The policy recommends buying <%= @stock_snapshot.ticker %> because it satisfies all fundamental rules, and its market price ($<%= @stock_snapshot.market_price %>) is less than the policy-recommended maximum price ($<%= @stock_snapshot.recommended_max_purchase_price %>).</p>
@@ -136,4 +129,11 @@
 </table>
 
 <h2>Explanation</h2>
-<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns.</p>
+<p>There are several fundamental rules for stock selection for the defensive investor, outlined in the book, "The Intelligent Investor," by Benjamin Graham. The gist of the defensive investing policy is to safeguard the investor from significant losses by purchasing stocks in companies that are not likely to fall and that are likely to produce adequate returns. The fundamental rules are as follows:</p>
+<ol style="line-width: 0.5rem">
+    <li>You should have 25-75% of your assets in stocks, and 25-75% of your assets in bonds.</li>
+    <li>You should own 10-30 stocks.</li>
+    <li>Each company is large, prominent, and conservatively financed.</li>
+    <li>Each company has at least a 10-year record of continuous dividend payments.</li>
+    <li>The price you pay for a stock should not exceed 25 times average earnings per share over the last seven years, and not more than 20 times those of the last twelve month period.</li>
+</ol>
