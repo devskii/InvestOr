@@ -1,4 +1,5 @@
 <h1>New Stock Snapshot</h1>
+<%= button_to 'Go Back to Existing Stock Snapshots', '/', method: :get %>
 <%= form_with model: @stock_snapshot do |form| %>
     <div>
         <%= form.label :ticker %>
